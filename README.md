@@ -9,22 +9,24 @@ Sockets Links.
  server .
 4. Send and receive the message using the send function in socket.
 ## PROGRAM
-# server.py
+# client.py
+#echo_server.py
+
 import socket
 
-# Create socket object
+#Create socket object
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# Bind the socket with host and port
+#Bind the socket with host and port
 host = '127.0.0.1'
 port = 5000
 server_socket.bind((host, port))
 
-# Listen for incoming connections
+#Listen for incoming connections
 server_socket.listen(1)
 print("Echo Server is waiting for connection...")
 
-# Accept client connection
+#Accept client connection
 client_socket, addr = server_socket.accept()
 print("Connected to:", addr)
 
@@ -40,16 +42,18 @@ while True:
     # Send the same message back to the client
     client_socket.send(data.encode())
 
-# Close sockets
+#Close sockets
 client_socket.close()
 server_socket.close()
-# client.py
+# server.py
+#echo_client.py
+
 import socket
 
-# Create socket object
+#Create socket object
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# Connect to server
+#Connect to server
 host = '127.0.0.1'
 port = 5000
 client_socket.connect((host, port))
@@ -68,12 +72,12 @@ while True:
     data = client_socket.recv(1024).decode()
     print("Server echoed:", data)
 
-# Close socket
+#Close socket
 client_socket.close()
 ## OUPUT
 ## server.py
 <img width="1181" height="186" alt="Screenshot 2026-11-18 101640" src="https://github.com/user-attachments/assets/e6ad724c-f80d-40a9-bc58-2fcf63ff8ca0" />
-# client.py
+## client.py
 <img width="1182" height="210" alt="Screenshot 2026-11-18 101726" src="https://github.com/user-attachments/assets/d1998d2c-ccc6-4126-8a99-647c1ab046dc" />
 
 
