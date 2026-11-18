@@ -9,9 +9,8 @@ Sockets Links.
  server .
 4. Send and receive the message using the send function in socket.
 ## PROGRAM
-# client.py
-#echo_server.py
-
+# server.py
+```
 import socket
 
 #Create socket object
@@ -45,9 +44,9 @@ while True:
 #Close sockets
 client_socket.close()
 server_socket.close()
-# server.py
-#echo_client.py
-
+```
+# client.py
+```
 import socket
 
 #Create socket object
@@ -74,6 +73,7 @@ while True:
 
 #Close socket
 client_socket.close()
+```
 ## OUPUT
 ## server.py
 <img width="1181" height="186" alt="Screenshot 2026-11-18 101640" src="https://github.com/user-attachments/assets/e6ad724c-f80d-40a9-bc58-2fcf63ff8ca0" />
